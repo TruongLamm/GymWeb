@@ -18,7 +18,7 @@
             name="input-10-2"
             :label="this.$t('name')"
             value=""
-            color="#333333"
+            color="#000000"
             :rules="[rules.required, rules.min]"
             v-model="userInput.userName"
             class="input-group--focused"
