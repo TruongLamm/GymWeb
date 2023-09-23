@@ -1,19 +1,22 @@
 <template>
-  <v-card>
+  <v-cart width="100vw" min-height="100vh" height="wrap-content">
+    <Banner></Banner>
     <AboutUs></AboutUs>
     <Benefits></Benefits>
-  </v-card>
+  </v-cart>
 </template>
 
 <script>
 import AboutUs from "../Atoms/AboutUs.vue";
 import Benefits from "../Organisms/Benefits.vue";
+import Banner from "../Organisms/Banner.vue";
 export default {
-  component: {
+  components: {
+    Banner,
     AboutUs,
     Benefits,
   },
-  components: { AboutUs, Benefits },
 };
 </script>
+
 <style></style>
