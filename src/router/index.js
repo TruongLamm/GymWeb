@@ -15,6 +15,12 @@ const routes = [
     component: () => import("../components/pages/LogIn.vue"),
     meta: {},
   },
+  {
+    path: "/Home",
+    name: "Home",
+    component: () => import("../components/pages/Home.vue"),
+    meta: {},
+  },
 ];
 
 const router = new VueRouter({
