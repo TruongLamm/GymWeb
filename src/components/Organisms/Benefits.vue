@@ -34,7 +34,7 @@
           <img
             class="benefits-img-2"
             src="../../assets/img/female_doing_situps.png"
-            alt="male_lifting_weights"
+            alt="female_doing_situps"
           />
         </div>
       </v-col>

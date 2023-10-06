@@ -3,6 +3,7 @@
     <Banner></Banner>
     <Benefits></Benefits>
     <Classes></Classes>
+    <Instructors></Instructors>
   </v-cart>
 </template>
 
@@ -10,11 +11,13 @@
 import Benefits from "../Organisms/Benefits.vue";
 import Banner from "../Organisms/Banner.vue";
 import Classes from "../Organisms/Classes.vue";
+import Instructors from "../Organisms/Instructors.vue";
 export default {
   components: {
     Banner,
     Benefits,
     Classes,
+    Instructors,
   },
 };
 </script>
