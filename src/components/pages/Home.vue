@@ -4,6 +4,7 @@
     <Benefits></Benefits>
     <Classes></Classes>
     <Instructors></Instructors>
+    <Feedback></Feedback>
     <BMI></BMI>
   </v-cart>
 </template>
@@ -13,6 +14,7 @@ import Benefits from "../Organisms/Benefits.vue";
 import Banner from "../Organisms/Banner.vue";
 import Classes from "../Organisms/Classes.vue";
 import Instructors from "../Organisms/Instructors.vue";
+import Feedback from "../Organisms/Feedback.vue";
 import BMI from "../Organisms/BMI.vue";
 export default {
   components: {
@@ -20,6 +22,7 @@ export default {
     Benefits,
     Classes,
     Instructors,
+    Feedback,
     BMI,
   },
 };
