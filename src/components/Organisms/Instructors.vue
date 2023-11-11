@@ -73,11 +73,14 @@ export default {
   line-height: 82px;
   letter-spacing: 0.02em;
   text-align: center;
+  padding-top: 30px;
+  margin-top: 15px;
 }
 .trainer {
   display: flex;
   justify-content: space-between;
-  padding: 5%;
+  padding: 30px 5% 5% 5%;
+  margin-top: 10px;
 }
 .card {
   border: none;
