@@ -108,6 +108,8 @@ d
   line-height: 82px;
   letter-spacing: 0.02em;
   text-align: center;
+  padding-bottom: 30px;
+  margin-bottom: 10px;
 }
 .feedback-group {
   display: flex;
@@ -115,9 +117,12 @@ d
 }
 .v-carousel__controls {
   background: none;
+  padding-top: 15px;
+  margin-top: 5px;
 }
 .feedback-page {
   background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%),
     rgba(255, 70, 1, 0.3);
+    min-height: 700px;
 }
 </style>
