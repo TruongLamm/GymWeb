@@ -1,220 +1,22 @@
 <template>
-  <v-card
-    class="d-flex align-center justify-center rounded-0 bg"
-    width="100vw"
-    min-height="100vh"
-    height="wrap-content"
-  >
-    <div>
-      <v-card
-        class="pa-10 d-flex flex-column align-center justify-space-between rounded-xl"
-        style="background-color: rgba(255, 255, 255, 1)"
-        width="400px"
-        height="auto"
-      >
-        <h3>{{ isLogin ? $t("logIn") : $t("register") }}</h3>
-        <div style="width: 100%">
-          <v-text-field
-            name="input-10-2"
-            :label="this.$t('name')"
-            value=""
-            color="#000000"
-            :rules="[rules.required, rules.min]"
-            v-model="userInput.userName"
-            class="input-group--focused"
-            v-show="!isLogin"
-          />
-
-          <v-text-field
-            name="input-10-2"
-            label="Company"
-            v-show="!isLogin"
-            :rules="[rules.required, rules.min]"
-            value=""
-            color="#333333"
-            v-model="userInput.userCompany"
-            class="input-group--focused"
-          />
-
-          <v-text-field
-            name="input-10-2"
-            label="Email"
-            value=""
-            :rules="[rules.required, rules.min]"
-            color="#333333"
-            v-model="userInput.userEmail"
-            class="input-group--focused"
-          />
-
-          <v-text-field
-            name="input-10-2"
-            color="#333333"
-            label="Phone"
-            :rules="[rules.required, rules.min]"
-            value=""
-            v-show="!isLogin"
-            v-model="userInput.userPhone"
-            class="input-group--focused"
-          />
-
-          <v-text-field
-            :append-icon="show3 ? 'mdi-eye' : 'mdi-eye-off'"
-            :rules="[rules.required, rules.min]"
-            :type="show3 ? 'text' : 'password'"
-            name="input-10-2"
-            :label="this.$t('password')"
-            :hint="this.$t('hintPasswordField')"
-            value=""
-            v-show="isLogin"
-            color="#333333"
-            v-model="userInput.userPassword"
-            class="input-group--focused"
-            @click:append="show3 = !show3"
-            @keyup.enter="callback"
-          />
-          <v-checkbox
-            v-model="policyChecked"
-            v-show="!isLogin"
-            color="green"
-            :rules="[rules.required]"
-            class="mb-5"
-            light
-            :label="'Agree to the all policy of Data V Tech'"
-          />
-        </div>
-        <div
-          v-if="isError && !isLogin"
-          class="d-flex justify-start"
-          style="width: 100%; color: red"
-        >
-          <h5>{{ errorMessage }}</h5>
-        </div>
-        <g-recaptcha
-          data-sitekey="6LcEqtQlAAAAAGHpVRo-Yb6sVo0o_3fa9jT2qhoP"
-          class="input-group--focused width-100 d-flex justify-center"
-          style="width: 100%"
-          :data-validate="validate"
-          :data-callback="callback"
-        >
-          <v-btn
-            elevation="2"
-            min-width="150px"
-            :loading="loader"
-            :disabled="loading"
-            @click="loader = 'loading'"
-            class="mb-3 width-100"
-            >{{ isLogin ? $t("logIn") : $t("register") }}</v-btn
-          >
-        </g-recaptcha>
-        <a class="switchTabMsg" @click="isLogin = !isLogin">{{
-          isLogin ? $t("switchTabRegister") : $t("switchTabLogin")
-        }}</a>
-      </v-card>
-    </div>
-  </v-card>
+  <v-cart width="100vw" min-height="100vh" height="wrap-content">
+    <Banner class="banner_custom"></Banner>
+    <Login></Login>
+  </v-cart>
 </template>
 
 <script>
-import gRecaptcha from "@finpo/vue2-recaptcha-invisible";
-import { mapGetters } from "vuex";
-
+import Banner from "../Organisms/Banner.vue";
+import Login from "../Organisms/Login.vue";
 export default {
   components: {
-    gRecaptcha,
-  },
-  mounted() {},
-  data() {
-    return {
-      userInput: {
-        userName: "",
-        userPhone: "",
-        userEmail: "",
-        userCompany: "",
-        userPassword: "",
-      },
-      isLogin: true,
-      show3: false,
-      policyChecked: false,
-      loading: false,
-      loader: null,
-      isError: false,
-      errorMessage: "",
-      isRan: false,
-    };
-  },
-  watch: {},
-  computed: {
-    ...mapGetters("User", []),
-    rules() {
-      return {
-        required: (value) => !!value || this.$t("required"),
-        min: (v) => v.length >= 0 || this.$t("hintPasswordField"),
-        emailMatch: () => this.$t("emailMatch"),
-        passwordMatch: (v) =>
-          this.userPassword === v || this.$t("passwordMatch"),
-      };
-    },
-  },
-  methods: {
-    validate() {
-      return true;
-    },
-    async callback(token) {
-      if (token) {
-        alert("Please check you are not robot!!!");
-      } else {
-        alert("Please check you are not robot!!!");
-      }
-    },
+    Banner,
+    Login,
   },
 };
 </script>
 
 <style scoped lang="scss">
-.width-100 {
-  width: 100%;
-}
-.button-submit {
-  width: 200%;
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-  background-color: transparent;
-  color: #7cc242;
-  border-radius: 2em;
-  border-width: 2px;
-  background: 0 0;
-  font-weight: bold;
-  margin-top: 10px;
-}
-.direction-column {
-  margin-top: 40px;
-  flex-direction: column;
-}
-.bg {
-  flex-direction: column;
-  background-color: #006780;
-  background-size: cover;
-}
-
-.hidden {
-  display: none !important;
-}
-
-a:hover {
-  font-weight: bolder;
-}
-
-.switchTabMsg {
-  text-align: center;
-  width: fit-content;
-  color: black !important;
-  text-decoration: underline;
-}
-
-.passwordRules {
-  margin-top: -25px;
-  margin-left: 15px;
-  font-size: small;
-  opacity: 0.6;
+.banner_custom {
 }
 </style>
