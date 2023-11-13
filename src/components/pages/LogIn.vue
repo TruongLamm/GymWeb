@@ -1,6 +1,6 @@
 <template>
   <v-cart width="100vw" min-height="100vh" height="wrap-content">
-    <Banner class="banner_custom"></Banner>
+    <Banner></Banner>
     <Login></Login>
   </v-cart>
 </template>
@@ -17,6 +17,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.banner_custom {
-}
 </style>

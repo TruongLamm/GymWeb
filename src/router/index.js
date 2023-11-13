@@ -21,6 +21,12 @@ const routes = [
     component: () => import("../components/pages/Home.vue"),
     meta: {},
   },
+  {
+    path: "/Account",
+    name: "Account",
+    component: () => import("../components/pages/Account.vue"),
+    meta: {},
+  },
 ];
 
 const router = new VueRouter({
