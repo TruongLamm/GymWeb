@@ -1,4 +1,4 @@
- <!-- eslint-disable -->
+<!-- eslint-disable -->
  <template>
     <div class="signup-buttons">
       <p class="signup_or">Or</p>
@@ -14,7 +14,7 @@
       </v-btn>
     </div>
 </template>
- <!-- eslint-disable -->
+<!-- eslint-disable -->
 <script>
 
 export default {

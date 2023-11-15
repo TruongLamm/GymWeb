@@ -188,7 +188,7 @@
           </v-btn>
     </v-card>
   </template>
-  <!-- eslint-disable -->
+<!-- eslint-disable -->
   <script>
     import PictureInput from 'vue-picture-input';
 

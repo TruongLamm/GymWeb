@@ -123,6 +123,6 @@ d
 .feedback-page {
   background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%),
     rgba(255, 70, 1, 0.3);
-    min-height: 700px;
+  min-height: 700px;
 }
 </style>

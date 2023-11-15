@@ -126,7 +126,7 @@
       </div>
     </v-card>
   </template>
-  <!-- eslint-disable -->
+<!-- eslint-disable -->
   <script>
   import gRecaptcha from "@finpo/vue2-recaptcha-invisible";
   import { mapGetters } from "vuex";
